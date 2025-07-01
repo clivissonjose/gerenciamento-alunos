@@ -49,7 +49,7 @@ public class AlunoRepositoryTest {
 
       this.alunoRepository.save(aluno);
 
-      //Aluno alunoRetornado = this.alunoRepository.getById(aluno.getId()).get();
+
       Aluno alunoRetornado = this.alunoRepository.findById(aluno.getId()).get();
 
 

@@ -47,7 +47,7 @@ public class AlunoControllerTest {
 
     @Before
     public void setup() {
-        alunoRepository.deleteAll(); // limpa antes de cada teste
+        alunoRepository.deleteAll();
     }
 
 
@@ -68,7 +68,7 @@ public class AlunoControllerTest {
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/alunos-adicionados"));
 
-        // Aluno com nome atualizado
+
         assertEquals("Antonio", aluno.getNome());
     }
 
@@ -92,7 +92,7 @@ public class AlunoControllerTest {
 
     }
 
-    // Teste :       Não conseguir usar mockMvc como nos outros testes
+    //  Não conseguir usar mockMvc como nos outros testes
     @Test
     public void pesquisarAlunotest() {
         Aluno aluno1 = new Aluno();

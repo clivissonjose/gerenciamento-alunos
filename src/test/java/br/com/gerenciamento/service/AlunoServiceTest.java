@@ -54,7 +54,7 @@ public class AlunoServiceTest {
 
     // NOVOS TESTES
 
-    // Teste 1: Deletar um usuário inexistente
+    // Teste 1: Deletar um usuário
     @Test
     public void deletarAluno(){
 
@@ -69,6 +69,7 @@ public class AlunoServiceTest {
         serviceAluno.save(aluno);
         serviceAluno.deleteById(aluno.getId());
 
+        // Verifica se o aluno realmente foi deletado
         Assert.assertThrows(NoSuchElementException.class, () -> {
 
             this.serviceAluno.getById(1L) ;

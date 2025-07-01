@@ -19,12 +19,7 @@ import org.springframework.test.annotation.Rollback;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class UsuarioRepositoryTest {
- /*
-    @Query("select e from Usuario e where e.email = :email")
-    Usuario findByEmail(String email);
 
-    @Query("select l from Usuario l where l.user = :user and l.senha = :senha")
-    Usuario buscarLogin(String user, String senha); */
 
     @Autowired
     UsuarioRepository usuarioRepository;
@@ -72,13 +67,13 @@ public class UsuarioRepositoryTest {
         usuario.setSenha("Neyeyeyey");
         usuario.setEmail("email@gmail.com");
 
-        //this.usuarioRepository.save(usuario);
+
         Assert.assertThrows(ConstraintViolationException.class, () -> {
             this.usuarioRepository.save(usuario);});
 
     }
 
- //
+
     @Test
     public void usuarioComNomeMuitoLongo(){
 
